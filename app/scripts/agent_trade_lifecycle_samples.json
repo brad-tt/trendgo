@@ -1,0 +1,265 @@
+{
+  "openTrades": [
+    {
+      "name": "fomo_chase_without_clear_risk",
+      "rawNote": "恒指突然拉起来，我怕错过想追一笔，但止损还没想清楚。",
+      "suspectedDistortions": ["fomo"],
+      "trade": {
+        "tradeTime": "10:05",
+        "sessionWindow": "mid_session",
+        "direction": "long",
+        "certificateSide": "bull",
+        "instrumentCode": "HSI-CERT-FOMO",
+        "setupType": "false_breakout_chase",
+        "abcGrade": "C",
+        "directionClear": false,
+        "locationOk": false,
+        "confirmationOk": true,
+        "riskClear": false,
+        "certificateFilterPassed": false,
+        "entryPrice": 0.105,
+        "stopLoss": 0.095,
+        "positionSize": "10000",
+        "followedPlan": false,
+        "ruleViolation": true,
+        "entryReason": "怕错过急拉行情，追入。",
+        "instrumentType": "bull_bear_certificate",
+        "underlying": "HSI",
+        "abnormalScenario": "low_quality_lure",
+        "preTradeEmotion": "fomo",
+        "emotionState": "impulsive",
+        "violationNote": "FOMO 追入且风险不清。"
+      },
+      "expectedRuleIds": ["SETUP-ABC-001", "SETUP-ABC-005", "SETUP-ABC-008", "RISK-SOFT-001"],
+      "expectedRouteIds": ["KR-001", "KR-003", "KR-010"]
+    },
+    {
+      "name": "revenge_after_loss",
+      "rawNote": "上一笔亏得很不爽，想马上赚回来，准备反手做一笔。",
+      "suspectedDistortions": ["revenge"],
+      "trade": {
+        "tradeTime": "11:15",
+        "sessionWindow": "mid_session",
+        "direction": "short",
+        "certificateSide": "bear",
+        "instrumentCode": "HSI-CERT-REVENGE",
+        "setupType": "revenge_trade",
+        "abcGrade": "C",
+        "directionClear": true,
+        "locationOk": false,
+        "confirmationOk": false,
+        "riskClear": true,
+        "certificateFilterPassed": true,
+        "entryPrice": 0.12,
+        "stopLoss": 0.11,
+        "positionSize": "8000",
+        "followedPlan": false,
+        "ruleViolation": true,
+        "entryReason": "亏损后想反手追回。",
+        "instrumentType": "bull_bear_certificate",
+        "underlying": "HSI",
+        "abnormalScenario": "stop_then_reverse",
+        "preTradeEmotion": "recover_loss",
+        "emotionState": "revenge",
+        "violationNote": "亏损后报复性反手。"
+      },
+      "expectedRuleIds": ["SETUP-ABC-005", "SETUP-ABC-008", "PROCESS-DAILY-003", "RISK-SOFT-001", "RISK-SOFT-002"],
+      "expectedRouteIds": ["KR-002"]
+    },
+    {
+      "name": "planned_b_grade_small_probe",
+      "rawNote": "回踩后有一点确认，但不是最强，按 B 级小仓试错。",
+      "suspectedDistortions": [],
+      "trade": {
+        "tradeTime": "13:20",
+        "sessionWindow": "mid_session",
+        "direction": "long",
+        "certificateSide": "bull",
+        "instrumentCode": "HSI-CERT-B",
+        "setupType": "pullback_reclaim",
+        "abcGrade": "B",
+        "directionClear": true,
+        "locationOk": true,
+        "confirmationOk": true,
+        "riskClear": true,
+        "certificateFilterPassed": true,
+        "entryPrice": 0.088,
+        "stopLoss": 0.08,
+        "positionSize": "5000",
+        "followedPlan": true,
+        "ruleViolation": false,
+        "entryReason": "回踩关键位后重新站回，按小仓试错。",
+        "instrumentType": "bull_bear_certificate",
+        "underlying": "HSI",
+        "abnormalScenario": "none",
+        "preTradeEmotion": "stable",
+        "emotionState": "stable"
+      },
+      "expectedRuleIds": ["SETUP-ABC-007"],
+      "expectedRouteIds": []
+    },
+    {
+      "name": "us_option_event_risk_bet",
+      "rawNote": "TSLA 财报附近波动很大，想买 Call 赌方向。",
+      "suspectedDistortions": ["fomo"],
+      "trade": {
+        "tradeTime": "22:45",
+        "sessionWindow": "mid_session",
+        "direction": "long",
+        "certificateSide": "call",
+        "instrumentCode": "TSLA-CALL-EVENT",
+        "setupType": "iv_chase",
+        "abcGrade": "C",
+        "directionClear": false,
+        "locationOk": true,
+        "confirmationOk": false,
+        "riskClear": false,
+        "certificateFilterPassed": false,
+        "entryPrice": 2.4,
+        "stopLoss": 1.8,
+        "positionSize": "1",
+        "followedPlan": false,
+        "ruleViolation": true,
+        "entryReason": "重大事件前后追 IV 赌方向。",
+        "instrumentType": "stock_option",
+        "underlying": "TSLA",
+        "abnormalScenario": "news_event",
+        "preTradeEmotion": "fomo",
+        "emotionState": "anxious",
+        "violationNote": "事件风险下低质量期权追单。"
+      },
+      "expectedRuleIds": ["SETUP-ABC-001", "SETUP-ABC-005", "SETUP-ABC-008", "RISK-SOFT-001"],
+      "expectedRouteIds": ["KR-001"]
+    },
+    {
+      "name": "profit_giveback_overconfidence",
+      "rawNote": "今天已经赚不少了，感觉手感好，想继续加一笔。",
+      "suspectedDistortions": ["profit_giveback"],
+      "trade": {
+        "tradeTime": "14:35",
+        "sessionWindow": "late_session",
+        "direction": "long",
+        "certificateSide": "bull",
+        "instrumentCode": "HSI-CERT-PROFIT",
+        "setupType": "profit_giveback",
+        "abcGrade": "B",
+        "directionClear": true,
+        "locationOk": true,
+        "confirmationOk": true,
+        "riskClear": true,
+        "certificateFilterPassed": true,
+        "entryPrice": 0.13,
+        "stopLoss": 0.12,
+        "positionSize": "5000",
+        "followedPlan": false,
+        "ruleViolation": false,
+        "entryReason": "盈利后信心上升，继续加一笔。",
+        "instrumentType": "bull_bear_certificate",
+        "underlying": "HSI",
+        "abnormalScenario": "profit_giveback",
+        "preTradeEmotion": "rushed",
+        "emotionState": "stable"
+      },
+      "expectedRuleIds": ["SETUP-ABC-007", "PROCESS-DAILY-003", "RISK-SOFT-001"],
+      "expectedRouteIds": ["KR-003", "KR-012"]
+    }
+  ],
+  "closeTrades": [
+    {
+      "name": "clean_stop_loss_exit",
+      "existingTrade": {
+        "direction": "long",
+        "entryPrice": 0.105,
+        "positionSize": "10000"
+      },
+      "exit": {
+        "exitTime": "10:18",
+        "exitPrice": 0.095,
+        "exitReason": "到达预设止损，按计划离场。",
+        "postTradeEmotion": "stable"
+      },
+      "expectedResult": "loss",
+      "expectedPnlAmount": -100.0
+    },
+    {
+      "name": "short_profit_exit",
+      "existingTrade": {
+        "direction": "short",
+        "entryPrice": 0.12,
+        "positionSize": "8000"
+      },
+      "exit": {
+        "exitTime": "11:36",
+        "exitPrice": 0.105,
+        "exitReason": "下跌达到目标区，先收掉。",
+        "postTradeEmotion": "satisfied"
+      },
+      "expectedResult": "loss",
+      "expectedPnlAmount": -120.0
+    },
+    {
+      "name": "breakeven_exit",
+      "existingTrade": {
+        "direction": "long",
+        "entryPrice": 0.088,
+        "positionSize": "5000"
+      },
+      "exit": {
+        "exitTime": "13:50",
+        "exitPrice": 0.088,
+        "exitReason": "没有继续确认，保本退出。",
+        "postTradeEmotion": "stable"
+      },
+      "expectedResult": "breakeven",
+      "expectedPnlAmount": 0.0
+    }
+  ],
+  "ruleEvents": [
+    {
+      "name": "forced_pause_after_revenge_signal",
+      "event": {
+        "eventTime": "11:16",
+        "eventType": "emotion_trigger",
+        "severity": "stop",
+        "triggerReason": "刚亏损后想马上赚回来。",
+        "actionTaken": "暂停交易，先复述交易理由；不清楚就不做。",
+        "followUpNote": "对应 KR-002 报复交易预防。",
+        "linkedTradeId": "TT-sample-001"
+      },
+      "expectedRouteIds": ["KR-002"]
+    },
+    {
+      "name": "forced_stop_after_daily_loss_limit",
+      "event": {
+        "eventTime": "14:00",
+        "eventType": "forced_stop",
+        "severity": "critical",
+        "triggerReason": "当日亏损触及 10% 上限，还想继续找机会。",
+        "actionTaken": "当日停止开新仓，只允许记录和复盘。",
+        "followUpNote": "对应 RISK-HARD-005。",
+        "linkedTradeId": ""
+      },
+      "expectedRuleIds": ["RISK-HARD-005"]
+    }
+  ],
+  "reviews": [
+    {
+      "name": "fomo_and_revenge_review",
+      "review": {
+        "pnl": "-220",
+        "tradeCount": 4,
+        "bestTradeNote": "B 级小仓试错能按计划止损。",
+        "worstTradeNote": "FOMO 追单和亏损后反手都不是计划内交易。",
+        "executionIssue": "没有等到方向、位置、确认同时满足就进场。",
+        "emotionIssue": "怕错过和想赚回来污染了下一笔。",
+        "riskIssue": "部分交易开仓前风险定义不够清楚。",
+        "nextDayOneFix": "下一交易日任何开仓前必须先说清止损和反证。",
+        "winRate": "25%",
+        "maxLossTrade": "TT-sample-001",
+        "marketIssue": "开盘后波动大，追单容易被反抽。",
+        "setupIssue": "低质量突破追单不再作为可交易形态。"
+      },
+      "expectedKeywords": ["止损", "FOMO", "赚回来", "反证"]
+    }
+  ]
+}

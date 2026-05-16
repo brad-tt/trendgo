@@ -1,0 +1,28 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Local runtime state and private trading data
+app/database/toptrader.db
+app/database/*.db
+!app/database/.gitkeep
+app/.toptrader_local_web_state.env
+app/.agent_sandbox.lock
+app/05-daily-ops/records/*
+app/05-daily-ops/closeouts/*
+app/05-daily-ops/summaries/*
+!app/05-daily-ops/records/.gitkeep
+!app/05-daily-ops/closeouts/.gitkeep
+!app/05-daily-ops/summaries/.gitkeep
+
+# Frontend dependencies and build output
+app/frontend/node_modules/
+app/frontend/dist/
+app/frontend/.vite/
+
+# Logs and local caches
+*.log
+logs/
+.pytest_cache/
+.playwright-mcp/
+*.local

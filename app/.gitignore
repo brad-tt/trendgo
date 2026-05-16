@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.toptrader_local_web_state.env
+.agent_sandbox.lock
+.tmp-web-smoke.*/
+node_modules/
+frontend/dist/
+*.local
+.playwright-mcp/

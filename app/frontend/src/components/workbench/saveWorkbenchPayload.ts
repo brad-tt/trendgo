@@ -1,0 +1,35 @@
+import type { WorkbenchFormState } from './workbenchPresets'
+
+export function buildWorkbenchPayload(form: WorkbenchFormState) {
+  return {
+    abnormalPlan: form.abnormalPlan,
+    capitalUsed: form.capitalUsed === '' ? null : Number(form.capitalUsed),
+    certificateFilterNote: form.certificateFilterNote,
+    currentState: form.currentState,
+    followNormalRules: form.followNormalRules,
+    focusSetup: form.focusSetup,
+    focusTickers: form.focusTickers,
+    hkWatchlist: form.hkWatchlist,
+    keyReminder: form.keyReminder,
+    lowerSupport: form.lowerSupport,
+    mainDirection: form.mainDirection,
+    openingPlan: form.openingPlan,
+    open30KeySignal: form.open30KeySignal,
+    optionContractFilter: form.optionContractFilter,
+    optionEntrySignal: form.optionEntrySignal,
+    optionEventRiskPlan: form.optionEventRiskPlan,
+    optionFocusSetup: form.optionFocusSetup,
+    optionRiskPlan: form.optionRiskPlan,
+    optionSessionPlan: form.optionSessionPlan,
+    pivotLevel: form.pivotLevel,
+    playbookPreset: form.playbookPreset,
+    postMarketSummary: form.postMarketSummary,
+    preMarketNote: form.preMarketNote,
+    preMarketState: form.preMarketState,
+    profitTargetPct: form.profitTargetPct === '' ? null : Number(form.profitTargetPct),
+    tradingMode: form.tradingMode,
+    tradingToday: form.tradingToday,
+    upperPressure: form.upperPressure,
+    usWatchlist: form.usWatchlist,
+  }
+}
